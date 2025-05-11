@@ -4,22 +4,47 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact Us - MotorNest Auto Parts</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-  <h1>Contact Us</h1>
-  <p>Have questions or need support? Reach out to us!</p>
+<body class="bg-gray-100 text-gray-800">
+  <div class="max-w-3xl mx-auto p-6 bg-white mt-10 rounded shadow">
+    <h1 class="text-3xl font-bold mb-4">Contact Us</h1>
 
-  <form action="mailto:support@motornest.com" method="post" enctype="text/plain">
-    <label for="name">Your Name:</label><br />
-    <input type="text" id="name" name="name" required /><br />
+    <p class="mb-4">
+      At MotorNest Auto Parts, we take pride in delivering high-quality automotive components backed by expert customer support. Whether you need help finding a specific part, have a question about your recent order, or simply want to share feedback, we’re here to help.
+    </p>
+    <p class="mb-4">
+      Our dedicated support team is available Monday through Friday, 9:00 AM – 5:00 PM (local time). We strive to respond to all inquiries within 24 business hours. If you're contacting us about an existing order, please include your order number for faster assistance.
+    </p>
+    <p class="mb-6">
+      You can also reach us directly via email at <a href="mailto:support@motornest.com" class="text-blue-600 underline">support@motornest.com</a>. For immediate assistance during business hours, consider using our live chat available on the homepage.
+    </p>
 
-    <label for="email">Your Email:</label><br />
-    <input type="email" id="email" name="email" required /><br />
+    <form action="mailto:support@motornest.com" method="POST" enctype="text/plain" class="space-y-4">
+      <div>
+        <label for="name" class="block font-medium">Full Name</label>
+        <input type="text" id="name" name="name" required class="w-full p-2 border rounded" placeholder="John Doe" />
+      </div>
 
-    <label for="message">Your Message:</label><br />
-    <textarea id="message" name="message" rows="5" required></textarea><br />
+      <div>
+        <label for="email" class="block font-medium">Email Address</label>
+        <input type="email" id="email" name="email" required class="w-full p-2 border rounded" placeholder="you@example.com" />
+      </div>
 
-    <button type="submit">Send</button>
-  </form>
+      <div>
+        <label for="subject" class="block font-medium">Subject</label>
+        <input type="text" id="subject" name="subject" required class="w-full p-2 border rounded" placeholder="Order Inquiry, Product Question, etc." />
+      </div>
+
+      <div>
+        <label for="message" class="block font-medium">Message</label>
+        <textarea id="message" name="message" rows="5" required class="w-full p-2 border rounded" placeholder="Type your message here..."></textarea>
+      </div>
+
+      <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+        Send Message
+      </button>
+    </form>
+  </div>
 </body>
 </html>
