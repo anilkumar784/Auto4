@@ -59,21 +59,39 @@
   </div>
 </div>
 
-<!-- Cookie Consent Dialog -->
-<div id="cookieConsent" class="fixed inset-0 bg-black bg-opacity-50 flex items-end md:items-center justify-center z-50">
+<!-- Response Message -->
+<div id="responseMessage" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
   <div class="bg-white p-6 rounded shadow-lg max-w-md w-full text-center">
-    <h2 class="text-xl font-semibold mb-2">We use cookies 🍪</h2>
-    <p class="mb-4 text-sm text-gray-600">MotorNest Auto Parts uses cookies to improve your browsing experience, personalize content, and analyze site traffic. Please accept or decline to proceed.</p>
-    <div class="flex justify-center space-x-4">
-      <button onclick="handleCookies(true)" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Accept</button>
-      <button onclick="handleCookies(false)" class="bg-gray-300 text-gray-800 px-4 py-2 rounded hover:bg-gray-400">Decline</button>
-    </div>
+    <p id="responseText" class="text-lg font-semibold"></p>
+    <button onclick="closeResponse()" class="bg-blue-600 text-white px-4 py-2 rounded mt-4 hover:bg-blue-700">Close</button>
   </div>
 </div>
+
 <script>
   function handleCookies(accepted) {
+    // Store the response in localStorage
     localStorage.setItem('cookiesAccepted', accepted);
+
+    // Hide the cookie consent dialog
     document.getElementById('cookieConsent').style.display = 'none';
+
+    // Display the response message
+    const responseMessage = document.getElementById('responseMessage');
+    const responseText = document.getElementById('responseText');
+
+    if (accepted) {
+      responseText.textContent = "Thank you for accepting cookies! We will personalize your experience.";
+    } else {
+      responseText.textContent = "You have declined the use of cookies. Your experience may be limited.";
+    }
+
+    // Show the response message
+    responseMessage.style.display = 'flex';
+  }
+
+  function closeResponse() {
+    // Hide the response message
+    document.getElementById('responseMessage').style.display = 'none';
   }
 
   window.onload = function () {
@@ -83,5 +101,6 @@
     }
   };
 </script>
+
 </body>
 </html>
