@@ -47,5 +47,31 @@
     <h2 class="text-xl font-semibold mt-6 mb-2">Contact</h2>
     <p>If you have any questions or concerns about this Cookies Policy, please contact us at <a href="mailto:support@motornest.com" class="text-blue-600 underline">support@motornest.com</a>.</p>
   </div>
+  <!-- Cookie Consent Dialog -->
+<div id="cookieConsent" class="fixed inset-0 bg-black bg-opacity-50 flex items-end md:items-center justify-center z-50">
+  <div class="bg-white p-6 rounded shadow-lg max-w-md w-full text-center">
+    <h2 class="text-xl font-semibold mb-2">We use cookies 🍪</h2>
+    <p class="mb-4 text-sm text-gray-600">MotorNest Auto Parts uses cookies to improve your browsing experience, personalize content, and analyze site traffic. Please accept or decline to proceed.</p>
+    <div class="flex justify-center space-x-4">
+      <button onclick="handleCookies(true)" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Accept</button>
+      <button onclick="handleCookies(false)" class="bg-gray-300 text-gray-800 px-4 py-2 rounded hover:bg-gray-400">Decline</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  function handleCookies(accepted) {
+    localStorage.setItem('cookiesAccepted', accepted);
+    document.getElementById('cookieConsent').style.display = 'none';
+  }
+
+  window.onload = function () {
+    const accepted = localStorage.getItem('cookiesAccepted');
+    if (accepted === "true" || accepted === "false") {
+      document.getElementById('cookieConsent').style.display = 'none';
+    }
+  };
+</script>
+
 </body>
 </html>
