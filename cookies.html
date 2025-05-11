@@ -47,7 +47,8 @@
     <h2 class="text-xl font-semibold mt-6 mb-2">Contact</h2>
     <p>If you have any questions or concerns about this Cookies Policy, please contact us at <a href="mailto:support@motornest.com" class="text-blue-600 underline">support@motornest.com</a>.</p>
   </div>
-  <!-- Cookie Consent Dialog -->
+  
+<!-- Cookie Consent Dialog -->
 <div id="cookieConsent" class="fixed inset-0 bg-black bg-opacity-50 flex items-end md:items-center justify-center z-50">
   <div class="bg-white p-6 rounded shadow-lg max-w-md w-full text-center">
     <h2 class="text-xl font-semibold mb-2">We use cookies 🍪</h2>
@@ -69,38 +70,32 @@
 
 <script>
   function handleCookies(accepted) {
-    // Store the response in localStorage
     localStorage.setItem('cookiesAccepted', accepted);
 
-    // Hide the cookie consent dialog
     document.getElementById('cookieConsent').style.display = 'none';
 
-    // Display the response message
-    const responseMessage = document.getElementById('responseMessage');
     const responseText = document.getElementById('responseText');
+    const responseMessage = document.getElementById('responseMessage');
 
-    if (accepted) {
-      responseText.textContent = "Thank you for accepting cookies! We will personalize your experience.";
-    } else {
-      responseText.textContent = "You have declined the use of cookies. Your experience may be limited.";
-    }
+    responseText.textContent = accepted
+      ? "Thank you for accepting cookies! We will personalize your experience."
+      : "You have declined the use of cookies. Your experience may be limited.";
 
-    // Show the response message
-    responseMessage.style.display = 'flex';
+    responseMessage.classList.remove("hidden");
   }
 
   function closeResponse() {
-    // Hide the response message
-    document.getElementById('responseMessage').style.display = 'none';
+    document.getElementById('responseMessage').classList.add("hidden");
   }
 
   window.onload = function () {
     const accepted = localStorage.getItem('cookiesAccepted');
-    if (accepted === "true" || accepted === "false") {
+    if (accepted !== "true" && accepted !== "false") {
+      document.getElementById('cookieConsent').style.display = 'flex';
+    } else {
       document.getElementById('cookieConsent').style.display = 'none';
     }
   };
 </script>
-
 </body>
 </html>
