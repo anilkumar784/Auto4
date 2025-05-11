@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MotorNest Auto Parts</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <!-- Header -->
+  <header class="bg-blue-900 text-white p-4 shadow-md">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold">MotorNest Auto Parts</h1>
+      <nav class="space-x-4">
+        <a href="#" class="hover:underline">Home</a>
+        <a href="#products" class="hover:underline">Products</a>
+        <a href="#about" class="hover:underline">About</a>
+        <a href="#contact" class="hover:underline">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="bg-cover bg-center h-64" style="background-image: url('https://via.placeholder.com/1500x400?text=MotorNest+Auto+Parts');">
+    <div class="bg-black bg-opacity-50 h-full flex items-center justify-center">
+      <h2 class="text-white text-3xl md:text-5xl font-bold">Quality Auto Parts You Can Trust</h2>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section id="products" class="py-12">
+    <div class="container mx-auto">
+      <h3 class="text-2xl font-semibold mb-6">Featured Products</h3>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-white p-4 shadow rounded">
+          <img src="https://via.placeholder.com/300x200" alt="Product 1" class="mb-4">
+          <h4 class="text-xl font-bold">Brake Pads</h4>
+          <p class="mt-2 text-gray-600">High-performance brake pads for all vehicle types.</p>
+        </div>
+        <div class="bg-white p-4 shadow rounded">
+          <img src="https://via.placeholder.com/300x200" alt="Product 2" class="mb-4">
+          <h4 class="text-xl font-bold">Oil Filters</h4>
+          <p class="mt-2 text-gray-600">Reliable filters to keep your engine clean and smooth.</p>
+        </div>
+        <div class="bg-white p-4 shadow rounded">
+          <img src="https://via.placeholder.com/300x200" alt="Product 3" class="mb-4">
+          <h4 class="text-xl font-bold">Car Batteries</h4>
+          <p class="mt-2 text-gray-600">Long-lasting batteries for a reliable start every time.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="bg-white py-12">
+    <div class="container mx-auto text-center">
+      <h3 class="text-2xl font-semibold mb-4">About MotorNest</h3>
+      <p class="text-gray-700 max-w-2xl mx-auto">MotorNest is your go-to destination for premium auto parts. With a wide selection of products, competitive prices, and excellent customer service, we aim to keep your vehicle in top shape.</p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-12 bg-gray-200">
+    <div class="container mx-auto text-center">
+      <h3 class="text-2xl font-semibold mb-4">Contact Us</h3>
+      <p class="mb-4">Have questions? Reach out to us at <a href="mailto:support@motornest.com" class="text-blue-700 underline">support@motornest.com</a></p>
+      <form class="max-w-md mx-auto bg-white p-6 rounded shadow">
+        <input type="text" placeholder="Your Name" class="w-full p-2 mb-4 border rounded">
+        <input type="email" placeholder="Your Email" class="w-full p-2 mb-4 border rounded">
+        <textarea placeholder="Your Message" class="w-full p-2 mb-4 border rounded h-32"></textarea>
+        <button type="submit" class="bg-blue-900 text-white px-4 py-2 rounded">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-blue-900 text-white text-center p-4 mt-12">
+    <p>&copy; 2025 MotorNest Auto Parts. All rights reserved.</p>
+  </footer>
+</body>
+</html>
